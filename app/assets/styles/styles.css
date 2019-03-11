@@ -1,15 +1,3 @@
-$mainBlue: #2f5572;
-
-h1 {
-
-	color: $mainBlue;
-	margin: 10px;
-	columns: 300px 2;
-}
-
-.box {
-	a {
-		display: block;
-		padding: 10px;
-	}
-}
+@import "normalize.css";
+@import "modules/_large-hero";
+@import "base/_global";
