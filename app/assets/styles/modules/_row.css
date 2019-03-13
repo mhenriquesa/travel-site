@@ -1,0 +1,51 @@
+.row {
+
+	@mixin clearfix;
+
+	&--gutters {
+		margin-right: -65px;
+		/* desconta o padding para o conteudo ir ate o fim da DIV*/
+	}
+
+	&--gutters > div { /*Será aplicado para todas os childs da DIV*/
+		padding-right: 65px;
+		/* Esse padding, faz o sistema 
+		de 12 colunas exceder e quebrar o conteudo.
+		Precisamos aplicar box-sizing: border-box;
+		(Obs: box-sizing pode está na _global.css)
+		*/
+	}
+
+
+	@mixin atMedium {
+	/*
+		Usando o esquema das 12 colunas
+	*/
+	&__medium-4 {
+		float: left;
+		width: 33.33%;  
+	}
+
+	&__medium-4-larger {
+		width: 37%;
+	}
+
+	&__medium-8 {
+		float: left;
+		width: 66.66%;
+		/*
+		 Float tira o elemento do fluxo normal.
+		 Parent elements desconsideram eles.
+		 É necessario fazer clearfix
+		*/
+	}
+
+	&__medium-8-smaller {
+		width: 63%;
+	}
+
+}
+
+
+
+}

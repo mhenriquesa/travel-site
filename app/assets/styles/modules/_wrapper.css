@@ -1,7 +1,28 @@
 .wrapper {
+	overflow: hidden; /*Corta tudo que ultrapassa o limite da DIV*/
 	padding-left: 20px;
 	padding-right: 20px;
-	max-width: 1000px;
+	max-width: 1240px;
 	margin-left: auto;
 	margin-right: auto;
+	
+
+	&--medium {
+		max-width: 976px;
+	}
+
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	} 
+
+	&--b-margin {
+		margin-bottom: 1rem;
+
+		@mixin atSmall {
+		margin-bottom: 3.875rem;
+	}
+
+
+	}
 }
