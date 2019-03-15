@@ -2,12 +2,10 @@
 
 		@mixin clearfix;
 
-	&--gutters {
-		margin-right: -65px;
-		/* desconta o padding para o conteudo ir ate o fim da DIV*/
-	}
-
-	&--gutters > div { /*Será aplicado para todas os childs da DIV*/
+	&--gutters > div { 
+		/*Será aplicado para todas os childs da DIV 
+		- Ou seja, todas as COLUNAS*/
+		
 		padding-right: 65px;
 		/* Esse padding, faz o sistema 
 		de 12 colunas exceder e quebrar o conteudo.
@@ -15,6 +13,22 @@
 		(Obs: box-sizing pode está na _global.css)
 		*/
 	}
+
+	&--gutters {
+		margin-right: -65px;
+		/* desconta o padding para o conteudo ir ate o fim da DIV*/
+	}
+
+	&--gutters-large > div {
+		padding-right: 100px;
+	}
+	
+	&--gutters-large {
+		margin-right: -100px;
+
+	}
+
+	
 	
 	&__b-margin-xs-sm {
 		margin-bottom: 1rem;
@@ -35,6 +49,13 @@
 
 			&__medium-4-larger {
 			width: 37%;
+			}
+
+			&__medium-6 {
+				float: left;
+				width: 50%;
+				
+
 			}
 
 			&__medium-8 {
