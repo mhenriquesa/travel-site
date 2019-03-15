@@ -1,6 +1,6 @@
 .row {
 
-	@mixin clearfix;
+		@mixin clearfix;
 
 	&--gutters {
 		margin-right: -65px;
@@ -15,34 +15,41 @@
 		(Obs: box-sizing pode está na _global.css)
 		*/
 	}
-
-
-	@mixin atMedium {
-	/*
-		Usando o esquema das 12 colunas
-	*/
-	&__medium-4 {
-		float: left;
-		width: 33.33%;  
+	
+	&__b-margin-xs-sm {
+		margin-bottom: 1rem;
 	}
-
-	&__medium-4-larger {
-		width: 37%;
-	}
-
-	&__medium-8 {
-		float: left;
-		width: 66.66%;
+	
+		@mixin atMedium {
 		/*
-		 Float tira o elemento do fluxo normal.
-		 Parent elements desconsideram eles.
-		 É necessario fazer clearfix
+			Usando o esquema das 12 colunas
 		*/
-	}
+			&__b-margin-xs-sm {
+			margin-bottom: 0rem;
+			}
 
-	&__medium-8-smaller {
-		width: 63%;
-	}
+			&__medium-4 {
+			float: left;
+			width: 33.33%;  
+			}
+
+			&__medium-4-larger {
+			width: 37%;
+			}
+
+			&__medium-8 {
+			float: left;
+			width: 66.66%;
+			/*
+			 Float tira o elemento do fluxo normal.
+			 Parent elements desconsideram eles.
+			 É necessario fazer clearfix
+			*/
+			}
+
+			&__medium-8-smaller {
+			width: 63%;
+			}
 
 }
 
