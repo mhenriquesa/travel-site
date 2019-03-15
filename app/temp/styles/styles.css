@@ -535,17 +535,27 @@ a {
 		clear: both;
 		display: table;
 	}
-.row--gutters {
-		margin-right: -65px;
-		/* desconta o padding para o conteudo ir ate o fim da DIV*/
-	}
-.row--gutters > div { /*Será aplicado para todas os childs da DIV*/
+.row--gutters > div { 
+		/*Será aplicado para todas os childs da DIV 
+		- Ou seja, todas as COLUNAS*/
+		
 		padding-right: 65px;
 		/* Esse padding, faz o sistema 
 		de 12 colunas exceder e quebrar o conteudo.
 		Precisamos aplicar box-sizing: border-box;
 		(Obs: box-sizing pode está na _global.css)
 		*/
+	}
+.row--gutters {
+		margin-right: -65px;
+		/* desconta o padding para o conteudo ir ate o fim da DIV*/
+	}
+.row--gutters-large > div {
+		padding-right: 100px;
+	}
+.row--gutters-large {
+		margin-right: -100px;
+
 	}
 .row__b-margin-xs-sm {
 		margin-bottom: 1rem;
@@ -572,6 +582,13 @@ a {
 			width: 37%;
 			}
 
+			.row__medium-6 {
+				float: left;
+				width: 50%;
+				
+
+			}
+
 			.row__medium-8 {
 			float: left;
 			width: 66.66%;
@@ -588,7 +605,8 @@ a {
 	}
 .generic-content-container p {
 	line-height: 1.65;
-	margin: 1.8rem 0;
+	margin: 0 0 1.8rem 0;
+	font-weight: 300;
 	}
 @media (min-width: 500px) {
 .generic-content-container p {
@@ -597,4 +615,38 @@ a {
 	}
 .generic-content-container p a {
 			font-weight: 700;
+	}
+.section-title {
+	font-size: 2.75rem;
+	font-weight: 300;
+	text-align: center;
+
+}
+@media (min-width: 800px) {
+.section-title {
+			font-size: 3.75rem
+
+}
+	}
+.section-title strong {
+		font-weight: 800;
+	}
+.section-title__icon {
+		margin-right: .5rem;
+	}
+.feature-iten {
+	padding-left: 94px;
+	position: relative;
+	padding-bottom: 2.5rem;
+	
+}
+.feature-iten__icon {
+		position: absolute;
+		left: 0;
+	}
+.feature-iten__title {
+		font-size: 1.875rem;
+		font-weight: 300;
+		margin-bottom: .8rem;
+
 	}
