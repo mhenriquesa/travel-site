@@ -2,34 +2,24 @@
 
 		@mixin clearfix;
 
-	&--gutters > div { 
-		/*Será aplicado para todas os childs da DIV 
-		- Ou seja, todas as COLUNAS*/
-		
+	&--gutters > div {
 		padding-right: 65px;
 		/* Esse padding, faz o sistema 
 		de 12 colunas exceder e quebrar o conteudo.
 		Precisamos aplicar box-sizing: border-box;
 		(Obs: box-sizing pode está na _global.css)
 		*/
-	}
-
+	} 
 	&--gutters {
 		margin-right: -65px;
 		/* desconta o padding para o conteudo ir ate o fim da DIV*/
 	}
-
 	&--gutters-large > div {
 		padding-right: 100px;
 	}
-	
 	&--gutters-large {
 		margin-right: -100px;
-
 	}
-
-	
-	
 	&__b-margin-xs-sm {
 		margin-bottom: 1rem;
 	}

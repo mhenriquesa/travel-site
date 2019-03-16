@@ -485,6 +485,11 @@ a {
 		background-color: #2f5572;
 		color: #fff;
 	}
+.page-section--testemonials {
+		background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+		background-size: cover;
+
+	}
 .headline {
 	font-weight: 300;
 	font-size: 1.8rem;
@@ -535,10 +540,7 @@ a {
 		clear: both;
 		display: table;
 	}
-.row--gutters > div { 
-		/*Será aplicado para todas os childs da DIV 
-		- Ou seja, todas as COLUNAS*/
-		
+.row--gutters > div {
 		padding-right: 65px;
 		/* Esse padding, faz o sistema 
 		de 12 colunas exceder e quebrar o conteudo.
@@ -555,7 +557,6 @@ a {
 	}
 .row--gutters-large {
 		margin-right: -100px;
-
 	}
 .row__b-margin-xs-sm {
 		margin-bottom: 1rem;
@@ -636,6 +637,9 @@ a {
 .section-title strong {
 		font-weight: 800;
 	}
+.section-title--blue {
+		color: #2f5572;
+	}
 .section-title__icon {
 	
 	display: block;
@@ -649,7 +653,9 @@ a {
 		margin-right: .5rem;
 		display: inline-block;
 		/*margin-left: 0;*/
-		margin-bottom: 0
+		margin-bottom: 0;
+		position: relative;
+		top: 8px
 	}
 	}
 @media (min-width: 500px) {
@@ -657,21 +663,17 @@ a {
 		padding-left: 94px;
 		position: relative;
 		padding-bottom: 2.5rem
-	
+
 }
 	}
 .feature-iten__icon {
-	/*position: absolute;
-	left: 0;*/
 	display: block;
 	margin: 0 auto;
-
 	}
 @media (min-width: 500px) {
 .feature-iten__icon {
 		position: absolute;
 		left: 0
-
 	}
 	}
 .feature-iten__title {
@@ -680,17 +682,44 @@ a {
 	margin-bottom: .8rem;
 	text-align: center;
 	margin-top: .8rem;
-
-
-
 	}
 @media (min-width: 500px) {
 .feature-iten__title {
 		font-size: 1.875rem;
 		text-align: left;
 		margin-top: 1rem
-
-
-
 	}
+	}
+.testimonial {
+	background-color: rgba(250, 250, 250, .8);
+	padding: 0 1.82rem 1px 1.82rem;
+}
+.testimonial__photo {
+	border-radius: 80px;
+	overflow: hidden;
+	width: 160px;
+	height: 160px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	margin-top: 0;
+	margin-bottom: -80px;
+	top: -80px;
+	border: 6px solid;
+	border-color: rgba(250, 250, 250, .8);
+	}
+.testimonial__title {
+		color: #2f5572;
+		text-align: center;
+		margin: 0;
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+.testimonial__subtitle {
+		color: #d59541;
+		text-align: center;
+		font-weight: 400;
+		font-size: 0.93rem;
+		margin: .25rem 0 1rem 0;
+		
 	}
