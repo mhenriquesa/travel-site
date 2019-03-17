@@ -20,10 +20,20 @@
 	&--gutters-large {
 		margin-right: -100px;
 	}
+	&--gutters-small > div {
+		padding-right: 45px;
+	}
+	&--gutters-small {
+		margin-right: -45px;
+	}
+
 	&__b-margin-xs-sm {
 		margin-bottom: 1rem;
 	}
-	
+	&--t-padding {
+		padding-top: 80px;
+	}
+
 		@mixin atMedium {
 		/*
 			Usando o esquema das 12 colunas
@@ -64,6 +74,66 @@
 
 }
 
+		@mixin atLarge {
+				/*
+					Usando o esquema das 12 colunas
+				*/
+					&__b-margin-until-large {
+					margin-bottom: 0rem;
+					}
 
+					&__large-4 {
+					float: left;
+					width: 33.33%;  
+					}
+
+					&__large-4-larger {
+					width: 37%;
+					} 
+
+					&__large-6 {
+						float: left;
+						width: 50%;
+						
+
+					}
+
+					&__large-8 {
+					float: left;
+					width: 66.66%;
+					/*
+					 Float tira o elemento do fluxo normal.
+					 Parent elements desconsideram eles.
+					 É necessario fazer clearfix
+					*/
+					}
+
+					&__large-8-smaller {
+					width: 63%;
+					}
+
+		}
+
+
+/* Being Equal Height Rules*/
+&--equal-height-at-medium {
+	@mixin atMedium {
+		display: flex;
+	}
+	& > div {
+		float: none;
+		display: flex;
+	}
+}
+
+&--equal-height-at-large {
+	@mixin atLarge {
+		display: flex;
+	}
+	& > div {
+		float: none;
+		display: flex;
+	}
+}
 
 }
