@@ -433,6 +433,7 @@ a {
 	display: inline-block;
 	text-decoration: none;
 
+
  }
 .btn--orange {
 		background-color: #d59541;
@@ -917,4 +918,22 @@ Instead, edit gulp/templates/sprites
 		width: 34.75px; 
 		height: 42px;
 		background-position: 36.69752421959096% 45.792307692307695%;
+	}
+.site-footer {
+	background-color: #2f5572;
+	color: #fff;
+	padding: 1px 0;
+	text-align: center;
+}
+.site-footer__text {
+	display: block;
+	margin-bottom: 1rem;
+	font-weight: 200;
+}
+@media (min-width: 800px) {
+.site-footer__text {
+			display: inline-block;
+			margin-bottom: 0;
+			margin-right: 3rem
+}
 	}
