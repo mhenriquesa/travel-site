@@ -9,6 +9,12 @@
 		top: 50%;
 		left: 0;
 		transform: translateY(-50%);
+		padding-top: 88px;
+
+		@mixin atMedium {
+			padding-top: 60px;
+
+		}
 	}
 
 	&__image {
