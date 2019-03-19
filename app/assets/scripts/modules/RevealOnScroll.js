@@ -36,9 +36,9 @@ class RevealOnScroll {
 			
 				offset: that.offsetPercentage
 			});	
-
 		});
-	}	/*************************/
+	}	
+	/*************************/
 }
 
 export default RevealOnScroll;
