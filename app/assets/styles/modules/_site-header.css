@@ -2,24 +2,134 @@
 	position: absolute; /*Usando absolute, o elemento encolhe para o minimo possivel*/
 	width:100%;
 	z-index: 2;
-	
 	padding: 10px 0;
+	/*Efeitos do Header*/
+	transition: background-color .3s ease-out;
+	/*-----------------*/	
 		@mixin atMedium{
 		background-color: rgba($mainBlue, .3); /*Usando PostCSS-hexrgba*/
 		}
 
+&--is-expanded {
+	background-color: rgba($mainBlue, .55);
+}
 
 &__btn-container {
-	float: right;
-}
-
-&__menu-content {
-	display: none;
 
 	@mixin atMedium {
-		display: block;
+	float: right;
 	}
 }
+/*--------Menu Content---------*/
+&__menu-content {
+	/*display: none;*/ /*No inicio foi usado display 
+							pra mostrar e esconder*/
+	padding-top: 90px;
+	text-align: center;
+
+	/*Efeitos do Menu*/
+	opacity: 0;
+	transform: scale(1.2);
+	transition: all .3s ease-out;
+	position: relative;
+	z-index: -10; /* Para jogar menu para baixo das DIVs 
+					 e não ser clicado*/
+
+	@mixin atMedium {
+		/*display: block;*/
+		padding: 0; /*Para anular o padding do responsive */
+
+		/*Efeitos do menu*/
+		opacity: 1;
+		transform: scale(1);
+		z-index: 1;
+		
+	}
+
+	&--is-visible {
+		/*display: block;*/ /*No inicio foi usado display pra mostrar e esconder*/
+		
+		/*Efeitos do Menu*/
+		opacity: 1;
+		transform: scale(1);
+		z-index: 1;
+	}
+}
+
+&__menu-icon {
+	width: 25px;
+	height: 24px;
+	/*background-color: #fff;*/
+	position: absolute;
+	top: 10px;
+	right: 10px;
+
+	/* Efeitos do Menu */
+	z-index: 10; /* Para quando o menu estiver aberto, 
+					o botão suba e possa ser clicável*/
+	
+	/*&__top*/ 
+		&::before	{
+			content:"";
+		position: absolute;
+		top: 1px;
+		left: 0;
+		width: 20px;
+		height: 3px;
+		background-color: #fff;
+		
+		/* Efeito do menu - X */
+		transform-origin: 0 0;
+		transition: transform .3s ease-out;
+	}
+	&__middle {
+		position: absolute;
+		top: 11px;
+		left: 0;
+		width: 20px;
+		height: 3px;
+		background-color: #fff;
+
+		/*Efeito do menu*/
+		transition: /*opacity*/all .3s ease-out;
+		transform-origin: 0 50%;
+
+	}
+	/*&__bottom*/ 
+		&::after	{
+			content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 20px;
+		height: 3px;
+		background-color: #fff;
+
+		/* Efeito do menu - X */
+		transform-origin: 0 0;
+		transition: transform .3s ease-out;
+	}
+
+	@mixin atMedium {
+		display: none;
+	}
+
+	&--close-x {
+		&::before {
+			transform: rotate(45deg) scaleX(1.4) /*translateY(1px)*/ ;
+		}
+		&::after {
+			transform: rotate(-45deg) scaleX(1.4);
+		}
+		.site-header__menu-icon__middle {
+			background-color: transparent;
+			transform: scaleX(0);
+
+		}
+	}
+}
+
+/*-///////Menu Content//////--*/
 
 &__logo {
 	position: absolute;
@@ -39,17 +149,6 @@
 &__logo__title {
 	text-indent: -999999px;
 }
-&__menu-icon {
-	width: 25px;
-	height: 25px;
-	background-color: #fff;
-	position: absolute;
-	top: 10px;
-	right: 10px;
 
-	@mixin atMedium {
-		display: none;
-	}
-}
 
 }
