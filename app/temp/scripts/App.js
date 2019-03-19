@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10325,180 +10325,6 @@ return jQuery;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _MobileMenu = __webpack_require__(2);
-
-var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
-
-var _RevealOnScroll = __webpack_require__(3);
-
-var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/******Pacotes necessários para o script**************/
-
-var mobileMenu = new _MobileMenu2.default();
-
-// var revealOnScroll = new RevealOnScroll();
-
-new _RevealOnScroll2.default((0, _jquery2.default)(".feature-iten"), "85%");
-new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "80%");
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/*Chamando pacote JQuery*/
-
-var MobileMenu = function () {
-	/*-----------------------------------------------
- constructor() {
- 	$(".site-header__menu-icon").click(function () {
- 	console.log("The top right icon was clicked.")
- 	})
- }
- 
- 	---------------------------------------------
- 	Todas as funcionalidades estão misturadas. (Espagueti)
- 	a) Seleção de elementos do DOM
- 	b) Event Handling
- 	c) Defining Functionality
- 	É dificil de admistrar um grande app dessa forma
- */
-	function MobileMenu() {
-		_classCallCheck(this, MobileMenu);
-
-		/*a) Seleção de elementos do DOM*/
-		this.siteHeader = (0, _jquery2.default)(".site-header");
-		this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
-		this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
-
-		this.events();
-	}
-
-	_createClass(MobileMenu, [{
-		key: "events",
-		value: function events() {
-			/* b) Event Handling */
-			this.menuIcon.click(this.toggleTheMenu.bind(this));
-		}
-	}, {
-		key: "toggleTheMenu",
-		value: function toggleTheMenu() {
-			/*c) Defining Functionality*/
-			this.menuContent.toggleClass("site-header__menu-content--is-visible");
-			this.siteHeader.toggleClass("site-header--is-expanded");
-			this.menuIcon.toggleClass("site-header__menu-icon--close-x");
-		}
-	}]);
-
-	return MobileMenu;
-}();
-
-exports.default = MobileMenu;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(0);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _noframework = __webpack_require__(4);
-
-var _noframework2 = _interopRequireDefault(_noframework);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/*Pacotes necessários para o script
-'jquery', 'waypoints'
-*/
-
-var RevealOnScroll = function () {
-	function RevealOnScroll(els, offset) {
-		_classCallCheck(this, RevealOnScroll);
-
-		this.itemsToReveal = els;
-		this.offsetPercentage = offset;
-
-		/*Chamando funções automaticamente no inicio do loading*/
-		this.hideInitally();
-		this.createWaypoints();
-	}
-
-	_createClass(RevealOnScroll, [{
-		key: 'hideInitally',
-		value: function hideInitally() {
-			this.itemsToReveal.addClass("reveal-item");
-		}
-	}, {
-		key: 'createWaypoints',
-		value: function createWaypoints() {
-			var that = this;
-
-			/*Contruindo os waypontis*/
-			this.itemsToReveal.each(function () {
-				var currentItem = this;
-
-				new Waypoint({
-					element: currentItem,
-
-					handler: function handler() {
-						(0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
-					},
-
-					offset: that.offsetPercentage
-				});
-			});
-		} /*************************/
-
-	}]);
-
-	return RevealOnScroll;
-}();
-
-exports.default = RevealOnScroll;
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports) {
 
 /*!
@@ -11259,6 +11085,259 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   Waypoint.Adapter = NoFrameworkAdapter
 }())
 ;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _MobileMenu = __webpack_require__(3);
+
+var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
+
+var _RevealOnScroll = __webpack_require__(4);
+
+var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
+
+var _StickyHeader = __webpack_require__(5);
+
+var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/******Pacotes necessários para o script**************/
+
+/* ----- Mobile menu ---- */
+var mobileMenu = new _MobileMenu2.default();
+/**************************/
+
+/* ---- Reveal on scrol ---- */
+
+// var revealOnScroll = new RevealOnScroll();
+
+new _RevealOnScroll2.default((0, _jquery2.default)(".feature-iten"), "85%");
+new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "80%");
+
+/*****************************************/
+
+/* Sticky Header*/
+var stickyHeader = new _StickyHeader2.default();
+/****************/
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*Chamando pacote JQuery*/
+
+var MobileMenu = function () {
+	/*-----------------------------------------------
+ constructor() {
+ 	$(".site-header__menu-icon").click(function () {
+ 	console.log("The top right icon was clicked.")
+ 	})
+ }
+ 
+ 	---------------------------------------------
+ 	Todas as funcionalidades estão misturadas. (Espagueti)
+ 	a) Seleção de elementos do DOM
+ 	b) Event Handling
+ 	c) Defining Functionality
+ 	É dificil de admistrar um grande app dessa forma
+ */
+	function MobileMenu() {
+		_classCallCheck(this, MobileMenu);
+
+		/*a) Seleção de elementos do DOM*/
+		this.siteHeader = (0, _jquery2.default)(".site-header");
+		this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+		this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+
+		this.events();
+	}
+
+	_createClass(MobileMenu, [{
+		key: "events",
+		value: function events() {
+			/* b) Event Handling */
+			this.menuIcon.click(this.toggleTheMenu.bind(this));
+		}
+	}, {
+		key: "toggleTheMenu",
+		value: function toggleTheMenu() {
+			/*c) Defining Functionality*/
+			this.menuContent.toggleClass("site-header__menu-content--is-visible");
+			this.siteHeader.toggleClass("site-header--is-expanded");
+			this.menuIcon.toggleClass("site-header__menu-icon--close-x");
+		}
+	}]);
+
+	return MobileMenu;
+}();
+
+exports.default = MobileMenu;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*Pacotes necessários para o script
+'jquery', 'waypoints'
+*/
+
+var RevealOnScroll = function () {
+	function RevealOnScroll(els, offset) {
+		_classCallCheck(this, RevealOnScroll);
+
+		this.itemsToReveal = els;
+		this.offsetPercentage = offset;
+
+		/*Chamando funções automaticamente no inicio do loading*/
+		this.hideInitally();
+		this.createWaypoints();
+	}
+
+	_createClass(RevealOnScroll, [{
+		key: 'hideInitally',
+		value: function hideInitally() {
+			this.itemsToReveal.addClass("reveal-item");
+		}
+	}, {
+		key: 'createWaypoints',
+		value: function createWaypoints() {
+			var that = this;
+
+			/*Contruindo os waypontis*/
+			this.itemsToReveal.each(function () {
+				var currentItem = this;
+
+				new Waypoint({
+					element: currentItem,
+
+					handler: function handler() {
+						(0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
+					},
+
+					offset: that.offsetPercentage
+				});
+			});
+		} /*************************/
+
+	}]);
+
+	return RevealOnScroll;
+}();
+
+exports.default = RevealOnScroll;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*Pacotes*/
+
+var StickyHeader = function () {
+	function StickyHeader() {
+		_classCallCheck(this, StickyHeader);
+
+		this.siteHeader = (0, _jquery2.default)('.site-header');
+		this.headerTrigger = (0, _jquery2.default)('.large-hero__title');
+
+		/*Chamando funções automaticamente no inicio do loading*/
+		this.createHeaderWaypoint();
+	}
+
+	_createClass(StickyHeader, [{
+		key: 'createHeaderWaypoint',
+		value: function createHeaderWaypoint() {
+			var that = this;
+
+			new Waypoint({
+				element: this.headerTrigger[0], /*ATENÇÃO! Dom Element - o indice [0] se refere ao Dom Element*/
+				/*
+    handler: function () {
+    	that.siteHeader.addClass("site-header--dark");
+    }*/
+				handler: function handler(direction) {
+					if (direction == "down") {
+						that.siteHeader.addClass("site-header--dark");
+					} else {
+						that.siteHeader.removeClass("site-header--dark");
+					}
+				}
+			});
+		}
+	}]);
+
+	return StickyHeader;
+}();
+
+exports.default = StickyHeader;
 
 /***/ })
 /******/ ]);

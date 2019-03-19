@@ -956,10 +956,15 @@ Instead, edit gulp/templates/sprites
 /*-----------------*/
 @media (min-width: 800px) {
 .site-header {
+		position: fixed; /*Fixa o header no topo*/
 		background-color: rgba(47,85,114, .3) /*Usando PostCSS-hexrgba*/
 
 
 }
+
+		.site-header--dark {
+			background-color: rgba(23, 51, 72, .85);
+		}
 	}
 .site-header--is-expanded {
 	background-color: rgba(47,85,114, .55);
@@ -1102,14 +1107,27 @@ Instead, edit gulp/templates/sprites
 	        transform-origin: 50% 0%; 
 	background-color: #2f5572;
 	padding: 25px 36px;
+
+	/*Efeito do Sticky Header*/
+	-webkit-transition: -webkit-transform .3s ease-out;
+	transition: -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 }
+/*******/
 @media (min-width: 800px) {
 .site-header__logo {
 
 	 left: auto; /*Para anular o responsive*/
 	 -webkit-transform: translateX(0);
 	         transform: translateX(0) /*Para anular o responsive*/
+
+	/*Efeito do Sticky Header*/
 }
+	.site-header--dark .site-header__logo {
+	 	-webkit-transform: scale(.57);
+	 	        transform: scale(.57);
+	 }
 	}
 .site-header__logo__title {
 	text-indent: -999999px;
