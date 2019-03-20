@@ -14,6 +14,11 @@
 	&--blue {
 		color: $mainBlue;
 	}
+
+	&--less-margin {
+		margin-bottom: 1.2rem;
+		margin-top: 0;
+	}
 	
 	&__icon {
 	
@@ -29,6 +34,10 @@
 		margin-bottom: 0;
 		position: relative;
 		top: 8px;
+
+		&--less-top {
+			top: 3px;
+		}
 		}
 	}	
 
