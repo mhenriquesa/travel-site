@@ -11321,12 +11321,15 @@ var StickyHeader = function () {
 		this.headerTrigger = (0, _jquery2.default)('.large-hero__title');
 		this.pageSections = (0, _jquery2.default)('.page-section');
 		this.headerLinks = (0, _jquery2.default)(".primary-nav a");
+		this.lazyimages = (0, _jquery2.default)(".lazyload");
 
 		/*Chamando funções automaticamente no inicio do loading*/
 		this.createHeaderWaypoint();
 		this.createSectionWaypoints();
 		this.addSmoothScrolling();
+		this.refreshWaypoints();
 	}
+
 	/**************************************/
 
 
@@ -11385,6 +11388,13 @@ var StickyHeader = function () {
 					},
 					offset: "-40%"
 				});
+			});
+		}
+	}, {
+		key: 'refreshWaypoints',
+		value: function refreshWaypoints() {
+			this.lazyimages.on('load', function () {
+				Waypoint.refreshAll();
 			});
 		}
 	}, {

@@ -7,7 +7,10 @@
     <meta name="keywords" content="Travel planning, travel bundles, travel escapes, affordable travel">
     <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
     <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
+    <script type="text/javascript" src="/temp/scripts/Vendor.js"></script>
+  
   </head>
+  
   <body>
     <!-- header -->
     <header class="site-header">
@@ -104,9 +107,18 @@
         <!-- Image - Casal Mãos dadas -->
           <!-- wrapper -->
           <div class="wrapper wrapper--medium wrapper--b-margin">
+            <!-- ******Configurção sem lazyload *******
             <img 
             sizes="(min-width: 970px) 976px, 100vw" 
             srcset="assets/images/first-trip-low-res.jpg 565w, 
+                    assets/images/first-trip.jpg 976w, 
+                    assets/images/first-trip-hi-dpi.jpg 1952w" 
+            alt="Couple walking down a street.">
+            -->
+            <img
+            class="lazyload" 
+            sizes="(min-width: 970px) 976px, 100vw" 
+            data-srcset="assets/images/first-trip-low-res.jpg 565w, 
                     assets/images/first-trip.jpg 976w, 
                     assets/images/first-trip-hi-dpi.jpg 1952w" 
             alt="Couple walking down a street.">
@@ -119,11 +131,17 @@
 
             <!-- Coluna 1 - Mulher loira - Fundadora -->
               <div class="row__b-margin-until-large row__medium-4 row__medium-4-larger">   
+                <!-- ***Configuração sem lazyload***
                 <picture>
-                <source media="(min-width: 1020px)" sizes="404px" srcset="assets/images/our-start.jpg 404w, assets/images/our-start-hi-dpi.jpg 808w" >
-                <source media="(min-width: 800px)" sizes="320px" srcset="assets/images/our-start-portrait.jpg 382w, assets/images/our-start-portrait-hi-dpi.jpg 764w" >
-                <img srcset="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder, Jane Doe">
-                </picture>        
+                  <source media="(min-width: 1020px)" sizes="404px" srcset="assets/images/our-start.jpg 404w, assets/images/our-start-hi-dpi.jpg 808w" >
+                  <source media="(min-width: 800px)" sizes="320px" srcset="assets/images/our-start-portrait.jpg 382w, assets/images/our-start-portrait-hi-dpi.jpg 764w" >
+                  <img srcset="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder, Jane Doe">
+                </picture> -->
+                <picture>
+                  <source media="(min-width: 1020px)" sizes="404px" data-srcset="assets/images/our-start.jpg 404w, assets/images/our-start-hi-dpi.jpg 808w" >
+                  <source media="(min-width: 800px)" sizes="320px" data-srcset="assets/images/our-start-portrait.jpg 382w, assets/images/our-start-portrait-hi-dpi.jpg 764w" >
+                  <img class="lazyload" data-srcset="assets/images/our-start-landscape.jpg 800w, assets/images/our-start-landscape-hi-dpi.jpg 1600w" alt="Our founder, Jane Doe">
+                </picture>
               </div>
             <!-- /Mulher loira - Fundadora -->
 
@@ -207,7 +225,8 @@
     <!-- /Section 2 - - Fundo Azul-->
 
     <!-- Section 3  - Testemonials-->
-      <div id="testimonials" class="page-section page-section--testemonials page-section--no-b-padding-until-large" data-matching-link="#testimonials-link">
+         <!-- background image usando lazy load -->
+      <div id="testimonials" class="page-section page-section--testemonials lazyload page-section--no-b-padding-until-large" data-matching-link="#testimonials-link">
         <!-- .wrapper -->
           <div class="wrapper wrapper--no-padding-until-large ">
             
@@ -222,11 +241,20 @@
                   <div class="testimonial">
                     <!-- .testimonial__photo -->
                     <div class="testimonial__photo">
-                      <!-- <img src="assets/images/testimonial-jane.jpg"> -->
+                        <!-- ****Configuração sem lazyload***
                         <img 
                         sizes="160px" 
                         srcset="assets/images/testimonial-jane.jpg 160w, 
                                 assets/images/testimonial-jane-hi-dpi.jpg 320w" 
+                        alt="Jane Doe Cliente"> 
+                        -->
+
+                        <!-- ***Usando lazy loads*** -->
+                        <img 
+                        class="lazyload" 
+                        sizes="160px" 
+                        data-srcset="assets/images/testimonial-jane.jpg 160w, 
+                                     assets/images/testimonial-jane-hi-dpi.jpg 320w"
                         alt="Jane Doe Cliente">
                     </div>
                     <!-- /.testimonial__photo -->
@@ -246,10 +274,11 @@
                     <div class="testimonial">
                       <!-- .testimonial__photo -->
                       <div class="testimonial__photo">
-                        <!-- <img src="assets/images/testimonial-john.jpg"> -->
-                        <img 
+          
+                        <img
+                        class="lazyload" 
                         sizes="160px" 
-                        srcset="assets/images/testimonial-john.jpg 160w, 
+                        data-srcset="assets/images/testimonial-john.jpg 160w, 
                                 assets/images/testimonial-john-hi-dpi.jpg 320w" 
                         alt="Sohn Smith Cliente">
                       </div>
@@ -268,10 +297,10 @@
                     <div class="testimonial testimonial--last">
                       <!-- .testimonial__photo -->
                       <div class="testimonial__photo">
-                        <!-- <img src="assets/images/testimonial-cat.jpg"> -->
                         <img 
+                        class="lazyload" 
                         sizes="160px" 
-                        srcset="assets/images/testimonial-cat.jpg 160w, 
+                        data-srcset="assets/images/testimonial-cat.jpg 160w, 
                                 assets/images/testimonial-cat-hi-dpi.jpg 320w" 
                         alt="McKitty Cliente">
                       </div>
