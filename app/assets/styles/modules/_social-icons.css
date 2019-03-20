@@ -1,0 +1,36 @@
+.social-icons {
+	text-align: center;
+
+	&__link {
+		background-color: $mainOrange;
+		display: inline-block; /*links em linha e podendo customizar width e height*/
+		
+		
+		/*Ajustes para responsive design*/
+		width: 33%;
+		height: 90px;
+		margin: 0 5px 5px 5px;
+		@mixin atMedium {
+			width: 72px;
+			height: 72px;
+			margin: 0 5px;
+		}
+		/********************************/
+
+
+		/*Posicionamento dos icones no centro do link*/
+		position: relative;		
+
+		.icon { /*Class dentro de class*/
+			display: block; /*A <spam> do sprite precisa ser display block
+			  				  para receber os width e height automaticamente*/
+			
+			/*Posicionamento dos icones no centro do link*/
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+
+		}
+	}
+}
