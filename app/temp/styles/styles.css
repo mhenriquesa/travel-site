@@ -438,7 +438,6 @@ a {
 	padding: 0.75rem 1.2rem;
 	display: inline-block;
 	text-decoration: none;
-
  }
 .btn--orange {
 		background-color: #d59541;
@@ -703,26 +702,26 @@ a {
 	}
 /* Being Equal Height Rules*/
 @media (min-width: 800px) {
-.row--equal-height-at-medium {
+.flexbox .row--equal-height-at-medium {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex
 }
 	}
-.row--equal-height-at-medium > div {
+.flexbox .row--equal-height-at-medium > div {
 		float: none;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 	}
 @media (min-width: 1010px) {
-.row--equal-height-at-large {
+.flexbox .row--equal-height-at-large {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex
 }
 	}
-.row--equal-height-at-large > div {
+.flexbox .row--equal-height-at-large > div {
 		float: none;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -873,6 +872,11 @@ Instead, edit gulp/templates/sprites
 .icon {
 	background-image: url('/assets/images/sprites/sprite-69f19c2e.svg'); /* o path do arquivo sprite gerado*/
 		}
+/*Modernizr - no svg*/
+.no-svg .icon {
+	background-image: url('/assets/images/sprites/sprite-69f19c2e.png');
+	}
+/********************/
 .icon--clear-view-escapes { 
 		width: 142.4px; 
 		height: 59.53px;

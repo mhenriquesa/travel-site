@@ -7,7 +7,6 @@ class MobileMenu {
 		console.log("The top right icon was clicked.")
 		})
 	}
-
 		---------------------------------------------
 		Todas as funcionalidades estão misturadas. (Espagueti)
 		a) Seleção de elementos do DOM
