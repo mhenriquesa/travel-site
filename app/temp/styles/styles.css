@@ -518,7 +518,7 @@ a {
 	}
 @media (min-width: 1010px) {
 			.page-section--testemonials.lazyloaded { /*apenas elementos que tambem tenham .lazyloaded*/
-				background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+				background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
 				background-size: cover;
 			}
 	}
@@ -870,11 +870,11 @@ As it is generated automatically by Gulp.
 Instead, edit gulp/templates/sprites
 */
 .icon {
-	background-image: url('/assets/images/sprites/sprite-69f19c2e.svg'); /* o path do arquivo sprite gerado*/
+	background-image: url('../../assets/images/sprites/sprite-69f19c2e.svg'); /* o path do arquivo sprite gerado*/
 		}
 /*Modernizr - no svg*/
 .no-svg .icon {
-	background-image: url('/assets/images/sprites/sprite-69f19c2e.png');
+	background-image: url('../../assets/images/sprites/sprite-69f19c2e.png');
 	}
 /********************/
 .icon--clear-view-escapes { 

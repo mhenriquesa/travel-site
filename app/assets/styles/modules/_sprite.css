@@ -4,12 +4,12 @@ Instead, edit gulp/templates/sprites
 */
 	
 	.icon {
-	background-image: url('/assets/images/sprites/sprite-69f19c2e.svg'); /* o path do arquivo sprite gerado*/
+	background-image: url('../../assets/images/sprites/sprite-69f19c2e.svg'); /* o path do arquivo sprite gerado*/
 		}
 	
 	/*Modernizr - no svg*/
 	.no-svg .icon {
-	background-image: url('/assets/images/sprites/sprite-69f19c2e.png');
+	background-image: url('../../assets/images/sprites/sprite-69f19c2e.png');
 	}
 	/********************/
 	
