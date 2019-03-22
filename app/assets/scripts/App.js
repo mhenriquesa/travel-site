@@ -5,10 +5,6 @@ import Modal from './modules/Modal';
 import $ from 'jquery';
 /******Pacotes necessários para o script**************/
 
-/*Modal*/
-var modal = new Modal();
-/*******/
-
 /* ----- Mobile menu ---- */
 var mobileMenu = new MobileMenu();
 /**************************/
@@ -24,4 +20,13 @@ new RevealOnScroll($(".testimonial"), "80%");
 /* Sticky Header*/
 var stickyHeader = new StickyHeader();
 /****************/
+
+/*Modal*/
+var modal = new Modal();
+/*******/
+
+
+
+
+
 

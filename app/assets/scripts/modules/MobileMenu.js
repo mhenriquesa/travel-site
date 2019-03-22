@@ -1,19 +1,7 @@
 import $ from 'jquery'; /*Chamando pacote JQuery*/
 
 class MobileMenu {
-	/*-----------------------------------------------
-	constructor() {
-		$(".site-header__menu-icon").click(function () {
-		console.log("The top right icon was clicked.")
-		})
-	}
-		---------------------------------------------
-		Todas as funcionalidades estão misturadas. (Espagueti)
-		a) Seleção de elementos do DOM
-		b) Event Handling
-		c) Defining Functionality
-		É dificil de admistrar um grande app dessa forma
-	*/ 
+
 	constructor() {
 		/*a) Seleção de elementos do DOM*/
 		this.siteHeader = $(".site-header"); 

@@ -25,24 +25,10 @@ gulp.task('watch', function () {
 	
 });
 
-/*
-----------------------------------------------------------------------------
-	Usando o CSS injected do BrowserSync:
-
-	gulp.task('qqNomeAqui', ['Aqui insere a task do PIPE do PostCSS'], function() {
-	return gulp.src('Path do .css linkado no html')
-		.pipe(browserSync.stream());
-
-	OBS: o segundo argumento de gulp.task será uma task que é importante rodar antes.
-});
-*/
-
 gulp.task('cssInject', ['styles'], function() {
 	return gulp.src('./app/temp/styles/styles.css')
 		.pipe(browserSync.stream());
 });
-
-/*------------------------------------------------------------------------*/
 
 gulp.task('scriptsRefresh', ['scripts'], function() {
 	browserSync.reload();
