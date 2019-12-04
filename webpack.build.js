@@ -11,7 +11,7 @@ module.exports = {
 		filename: "[name].[contentHash].js"
 	},
 	plugins: [new HtmlWebpackPlugin({
-        template:'./app/index.ejs',
+        template:'./app/index.html',
         inject: false
 	})],
 	module: {

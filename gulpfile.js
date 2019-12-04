@@ -8,3 +8,4 @@ require('./gulp/tasks/scripts')
 //require('./gulp/tasks/build');
 require('./gulp/tasks/watch')
 require('./gulp/tasks/dist')
+require('./gulp/tasks/replace')
