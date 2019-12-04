@@ -1,35 +1,34 @@
-var gulp = require('gulp'),
-watch = require('gulp-watch'),
-browserSync = require('browser-sync').create();
+const gulp = require('gulp')
+const browserSync = require('browser-sync').create()
 
-gulp.task('watch', function () {
-	
-	browserSync.init({
-		// notify: false,
-		server: {
-			baseDir: "app"
-		}
-	});
+// -----------Functions ---------------
+function watch_files() {
+  browserSyncInit()
+  gulp.watch('./app/index.html', browserReload)
+  gulp.watch('./app/assets/styles/**/*', gulp.series('styles', cssStream));
+  gulp.watch('./app/assets/scripts/**/*.js', gulp.series('scripts', browserReload));
+}
 
-	watch('./app/index.html', function () {
-		browserSync.reload();
-	});
+function browserSyncInit() {
+  browserSync.init({
+    notify: true,
+    server: {
+      baseDir: "app"
+    },
+    ghostMode: false
+  })
+}
 
-	watch('./app/assets/scripts/**/*.js', function () {
-		gulp.start('scriptsRefresh');
-	});
+function browserReload(cb) {
+ browserSync.reload()
+ cb()
+}
 
-	watch('./app/assets/styles/**/*.css', function () {
-			gulp.start('cssInject');
-	});
-	
-});
+function cssStream() {
+  return gulp
+  .src('./app/temp/styles/styles.css')
+  .pipe(browserSync.stream())
+}
+// -----------/Functions-----------------
 
-gulp.task('cssInject', ['styles'], function() {
-	return gulp.src('./app/temp/styles/styles.css')
-		.pipe(browserSync.stream());
-});
-
-gulp.task('scriptsRefresh', ['scripts'], function() {
-	browserSync.reload();
-});
+gulp.task('watch', watch_files)

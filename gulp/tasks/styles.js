@@ -1,24 +1,19 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
 postcss = require('gulp-postcss'),
+rgba = require('postcss-hexrgba'),
 autoprefixer = require('autoprefixer'),
 cssvars = require('postcss-simple-vars'),
 nested = require('postcss-nested'),
 cssImport = require('postcss-import'),
 mixins = require('postcss-mixins'),
-hex = require('postcss-hexrgba');
+colorFunctions = require('postcss-color-function');
 
-/*
-	Consfiguração do PIPE do PostCSS 
-	((lembrar sempre se adicionar cada filtro dentro do PIPE))
-*/
-gulp.task('styles', function () {
-	return gulp.src('./app/assets/styles/styles.css')
-	.pipe(postcss([cssImport, mixins, cssvars, nested, hex, autoprefixer]))
-	//Adiciona um teste para erros no PIPE
-	.on('error', function (errorInfo) {
-		console.log(errorInfo.toString());
-		this.emit('end');
-	})
-	// Fim do teste de errors
-	.pipe(gulp.dest('./app/temp/styles'));
-}); 
+function cssPipe() {
+  return gulp
+  	.src('./app/assets/styles/styles.css')
+    .pipe(postcss([cssImport, mixins, cssvars, nested, rgba, colorFunctions, autoprefixer]))
+    .on('error', (error) => console.log(error.toString()))
+    .pipe(gulp.dest('./app/temp/styles'));
+}
+
+gulp.task('styles', cssPipe)

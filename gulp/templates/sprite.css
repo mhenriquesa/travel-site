@@ -4,22 +4,14 @@ Instead, edit gulp/templates/sprites
 */
 {{#shapes}}
 	{{#first}}
-	
 	.icon {
-	background-image: url('../../assets/images/sprites/{{{sprite}}}'); /* o path do arquivo sprite gerado*/
-		}
-	
-	/*Modernizr - no svg*/
-	.no-svg .icon {
-	background-image: url('../../assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
+		background-image: url('/assets/images/sprites/{{{sprite}}}');
 	}
-	/********************/
-	
 	{{/first}}
-	
-	.icon--{{base}} { 
-		width: {{width.outer}}px; 
-		height: {{height.outer}}px;
-		background-position: {{position.relative.xy}};
-	}
+
+.icon--{{base}} {
+	width: {{width.outer}}px;
+	height: {{height.outer}}px;
+	background-position: {{position.relative.xy}};
+}
 {{/shapes}}

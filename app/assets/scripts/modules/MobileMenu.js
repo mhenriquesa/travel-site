@@ -1,4 +1,4 @@
-import $ from 'jquery'; /*Chamando pacote JQuery*/
+import $ from 'jquery'; //
 
 class MobileMenu {
 

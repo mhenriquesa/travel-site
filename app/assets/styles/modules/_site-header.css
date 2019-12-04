@@ -61,77 +61,77 @@
 	}
 }
 
-&__menu-icon {
-	width: 25px;
-	height: 24px;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-
-	/* Efeitos do Menu */
-	z-index: 10; /* Para quando o menu estiver aberto, 
-					o botão suba e possa ser clicável*/
-	
-	/*&__top*/ 
-		&::before	{
-			content:"";
+	&__menu-icon {
+		width: 25px;
+		height: 24px;
 		position: absolute;
-		top: 1px;
-		left: 0;
-		width: 20px;
-		height: 3px;
-		background-color: #fff;
+		top: 10px;
+		right: 10px;
+
+		/* Efeitos do Menu */
+		z-index: 10; /* Para quando o menu estiver aberto, 
+						o botão suba e possa ser clicável*/
 		
-		/* Efeito do menu - X */
-		transform-origin: 0 0;
-		transition: transform .3s ease-out;
-	}
-	&__middle {
-		position: absolute;
-		top: 11px;
-		left: 0;
-		width: 20px;
-		height: 3px;
-		background-color: #fff;
-
-		/*Efeito do menu*/
-		transition: /*opacity*/all .3s ease-out;
-		transform-origin: 0 50%;
-
-	}
-	/*&__bottom*/ 
-		&::after	{
-			content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 20px;
-		height: 3px;
-		background-color: #fff;
-
-		/* Efeito do menu - X */
-		transform-origin: 0 0;
-		transition: transform .3s ease-out;
-	}
-
-	@mixin atMedium {
-		display: none;
-	}
-
-	&--close-x {
-		&::before {
-			transform: rotate(45deg) scaleX(1.4) /*translateY(1px)*/ ;
+		/*&__top*/ 
+			&::before	{
+				content:"";
+			position: absolute;
+			top: 1px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			
+			/* Efeito do menu - X */
+			transform-origin: 0 0;
+			transition: transform .3s ease-out;
 		}
-		&::after {
-			transform: rotate(-45deg) scaleX(1.4);
-		}
-		.site-header__menu-icon__middle {
-			background-color: transparent;
-			transform: scaleX(0);
+		&__middle {
+			position: absolute;
+			top: 11px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+
+			/*Efeito do menu*/
+			transition: /*opacity*/all .3s ease-out;
+			transform-origin: 0 50%;
 
 		}
+		/*&__bottom*/ 
+			&::after	{
+				content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+
+			/* Efeito do menu - X */
+			transform-origin: 0 0;
+			transition: transform .3s ease-out;
+		}
+
+		@mixin atMedium {
+			display: none;
+		}
+
+		&--close-x {
+			&::before {
+				transform: rotate(45deg) scaleX(1.4) /*translateY(1px)*/ ;
+			}
+			&::after {
+				transform: rotate(-45deg) scaleX(1.4);
+			}
+			.site-header__menu-icon__middle {
+				background-color: transparent;
+				transform: scaleX(0);
+
+			}
+		}
 	}
-}
 
 /*-///////Menu Content//////--*/
 

@@ -11,7 +11,7 @@ class Modal {
 	}
 
 	events() {
-		// Clicking the open modal button
+		// Clicking the open modal button.
 		this.openModalButton.click(this.openModal.bind(this));
 
 		// clicking the x close modal button
